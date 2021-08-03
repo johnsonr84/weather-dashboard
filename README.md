@@ -8,7 +8,7 @@ assignment 6
 
   ## Table of Contents 
   * [Description](#Description)
-  * [User Story] (#UserStory)
+  * [User Story](#UserStory)
   * [Project URL](#Project-URL)
   * [Mock-up](#Mock-up)
   * [Usage](#Usage)
@@ -22,7 +22,7 @@ assignment 6
   #
   
   ## Description 
-  Developers are often tasked with retrieving data from another application's API and using it in the context of their own. Third-party APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. Your challenge is to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS. 
+  Weather dashboard that runs in the browser, utilizes Third-party APIs and features dynamically updated HTML and CSS. The user can search for any city and view a current and aticipated 5-day weather forcast. 
 
   ## UserStory 
   ```
