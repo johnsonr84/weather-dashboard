@@ -96,7 +96,7 @@ assignment 6
   * [w3schools](https://www.w3schools.com/)
   * [stackoverflow.com](https://stackoverflow.com/)
   * [YouTube](https://www.youtube.com/)
-  * [UOFU-SAN-FSF-PT-11-2020-U-C/04-JWeb-Apis/Activities]
+  * [UOFU-SAN-FSF-PT-11-2020-U-C/04-Javascript/Activities]
   * [OpenWeather API](https://openweathermap.org/api)
 
   ## Contact
