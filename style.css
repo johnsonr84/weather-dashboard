@@ -1,3 +1,8 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.container-fluid {
+    height: 70vh;
+    width: 100vh;
+}

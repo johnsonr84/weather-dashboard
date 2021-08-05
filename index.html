@@ -23,9 +23,9 @@
             <h2>Weather Dashboard</h2>
         </div>
 
-
-        <!-- Weather Dashboard Cntainer -->
+        <!-------------- Weather Dashboard Cntainer -------------->
         <div class="row">
+            <!-- search for city -->
             <div class="col-md-3 h-50 bg-light pt-5 pb-5">
                 <form class="d-flex h-50 bg-light">
                     <input class="form-control me-2" type="search" placeholder="Search for city" aria-label="Search">
@@ -34,12 +34,23 @@
                 </form>
             </div>
             <div class="col-md-9">
-
+                <!-- current weather -->
+                <div class="row border border-light-dark rounded p-2 m-2">
+                    <h3>Current Weather:</h3>
+                    <div class="container" id="currentWeather">
+                    </div>
+                </div>
+                <!-- 5-day forcast -->
+                <div class="row p-2 m-2">
+                    <h3>5-Day Forecast:</h3>
+                    <div class="card-deck" id="fiveDayForecast">
+                    </div>
+                </div>
             </div>
         </div>
 
         <!-- Footer -->
-        <nav class="navbar fixed-bottom bg-dark">
+        <nav class="navbar fixed-bottom bg-dark w-100">
             <div class="row">
             </div>
         </nav>
