@@ -53,11 +53,9 @@ assignment 6
   <table>
   <tr>
     <td>weather-dashboard</td>
-     <td>weather-dashboard instructions</td>
   </tr>
   <tr>
-    <td><img src="./img/weather-dashboard_1.png" height=300 alt="screenshot of weather-dashboard"></td>
-    <td><img src="./img/weather-dashboard_2.png" height=300 alt="screenshot of weather-dashboard"></td>
+    <td><img src="assets/06-server-side-apis-homework-demo.png" height=300 alt="screenshot of weather-dashboard"></td>
   </tr>
   </table>
   <table>
