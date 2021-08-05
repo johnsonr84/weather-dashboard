@@ -1,26 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
     <!-- Bootstrap CSS CDN  -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
 
-  <!-- Font Awesome CSS Icons (For cool glyphicons) -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <!-- Font Awesome CSS Icons (For cool glyphicons) -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
 
 </head>
+
 <body>
+    <div class="container-fluid">
+        <!-- Header -->
+        <div class="row bg-dark text-center text-light justify-content-center">
+            <h2>Weather Dashboard</h2>
+        </div>
 
 
-     <!-- jQuery JS -->
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
-  <!-- Code to the JavaScript File -->
-  <script src="script.js"></script>
+        <!-- Weather Dashboard Cntainer -->
+        <div class="row">
+            <div class="col-md-3 h-50 bg-light pt-5 pb-5">
+                <form class="d-flex h-50 bg-light">
+                    <input class="form-control me-2" type="search" placeholder="Search for city" aria-label="Search">
+                    <button class="btn btn-primary" type="submit"><i class="fa fa-search"
+                            aria-hidden="true"></i></button>
+                </form>
+            </div>
+            <div class="col-md-9">
 
-    
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <nav class="navbar fixed-bottom bg-dark">
+            <div class="row">
+            </div>
+        </nav>
+    </div>
+
+
+    <!-- jQuery JS -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Code to the JavaScript File -->
+    <script src="./script.js"></script>
+
+
 </body>
+
 </html>
