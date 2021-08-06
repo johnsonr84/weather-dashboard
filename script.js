@@ -1,7 +1,9 @@
 // Openweather API Key //
 var apiKey = "0ad804791848d3621c16320ba8701218";
 var currentWeatherURL = "https://api.openweathermap.org/data/2.5/weather?q"
+var forcastURL = "https://api.openweathermap.org/data/2.5/forecast?q"
 var currentWeather = $("#weather");
+var forecast = $("#forecast");
 
 $(document).ready(function () {
     $("#cityInput").keyup(function (event) {
@@ -16,9 +18,10 @@ $("#submitCity").click(function () {
     let cityName = $("#cityInput").val();
     localStorage.setItem("currentCity", cityName)
     returnWeather(cityName);
+    returnForecast(cityName);
 });
 
-// API call for weather
+// Weather API call
 function returnWeather(cityName) {
     let queryURL = `${currentWeatherURL}=${cityName}&units=imperial&APPID=${apiKey}`;
 
@@ -40,7 +43,7 @@ function returnWeather(cityName) {
     })
 };
 
-// API call to retrieve the UV index, this is called in the "reutnrCurrentWeather" function.
+// UV index API call 
 function uvIndex(coordinates) {
     let queryURL = `https://api.openweathermap.org/data/2.5/uvi?lat=${coordinates.lat}&lon=${coordinates.lon}&APPID=${apiKey}`;
 
@@ -64,3 +67,35 @@ function uvIndex(coordinates) {
         currentWeather.append(`<p>UV Index: <span class="text-${textColor}" style="background-color: ${uvStrength};">${currUVIndex}</span></p>`);
     })
 }
+
+// Forcast API call
+function returnForecast(cityName) {
+    let queryURL = `${forcastURL}=${cityName}&units=imperial&APPID=${apiKey}`;
+
+    $.get(queryURL).then(function (response) {
+        let forecastInfo = response.list;
+        console.log(response);
+        forecast.empty();
+        $.each(forecastInfo, function (i) {
+            if (!forecastInfo[i].dt_txt.includes("12:00:00")) {
+                return;
+            }
+            //Forecast Dates
+            let forecastDate = new Date(forecastInfo[i].dt * 1000);
+            //displays icon
+            let weatherIcon = `https://openweathermap.org/img/wn/${forecastInfo[i].weather[0].icon}.png`;
+            // append data to div when searched
+            forecast.append(`
+                <div class="card text-white bg-primary">
+                    <div class="card-body">
+                        <h6>${forecastDate.getMonth() + 1}/${forecastDate.getDate()}/${forecastDate.getFullYear()}</h6>
+                        <img src=${weatherIcon} alt="Icon">
+                        <p>Temp: ${forecastInfo[i].main.temp}&#176;F</p>
+                        <p>Humidity: ${forecastInfo[i].main.humidity}%</p>
+                    </div>
+                </div>
+            </div>
+            `)
+        })
+    })
+};
