@@ -10,7 +10,6 @@
     <!-- Bootstrap CSS CDN  -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
-
     <!-- Font Awesome CSS Icons (For cool glyphicons) -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
 
@@ -20,7 +19,7 @@
     <div class="container-fluid">
         <!-- Header -->
         <div class="row bg-dark text-center text-light justify-content-center">
-            <h2>Weather Dashboard</h2>
+            <h1>Weather Dashboard</h1>
         </div>
 
         <!-------------- Weather Dashboard Cntainer -------------->
@@ -28,22 +27,23 @@
             <!-- search for city -->
             <div class="col-md-3 h-50 bg-light pt-5 pb-5">
                 <form class="d-flex h-50 bg-light">
-                    <input class="form-control me-2" type="search" placeholder="Search for city" aria-label="Search">
-                    <button class="btn btn-primary" type="submit"><i class="fa fa-search"
-                            aria-hidden="true"></i></button>
+                    <input class="form-control me-2 searchBtn" id="cityInput" type="search"
+                        placeholder="Search for city">
+                    <button class="btn btn-primary" id="submitCity" type="submit"><i class="fa fa-search"
+                            aria-describedby="searchBtn"></i></button>
                 </form>
             </div>
             <div class="col-md-9">
                 <!-- current weather -->
-                <div class="row border border-light-dark rounded p-2 m-2">
-                    <h3>Current Weather:</h3>
-                    <div class="container" id="currentWeather">
+                <div class="row border border-light-dark rounded p-2 m-3 mt-5">
+                    <h3>Current Conditions:</h3>
+                    <div class="container" id="weather">
                     </div>
                 </div>
                 <!-- 5-day forcast -->
                 <div class="row p-2 m-2">
                     <h3>5-Day Forecast:</h3>
-                    <div class="card-deck" id="fiveDayForecast">
+                    <div class="card-deck" id="forecast">
                     </div>
                 </div>
             </div>
@@ -58,7 +58,11 @@
 
 
     <!-- jQuery JS -->
-    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
     <!-- Code to the JavaScript File -->
     <script src="./script.js"></script>
