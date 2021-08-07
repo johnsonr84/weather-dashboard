@@ -20,40 +20,45 @@
         <!-- Header -->
         <div class="row bg-dark text-center text-light justify-content-center">
             <h1>Weather Dashboard</h1>
-        </div>
+        </div> 
+    
 
         <!-------------- Weather Dashboard Cntainer -------------->
         <div class="row">
             <!-- search for city -->
-            <div class="col-md-3 h-50 bg-light pt-5 pb-5">
-                <form class="d-flex h-50 bg-light">
-                    <input class="form-control me-2 searchBtn" id="cityInput" type="search"
+            <div class="col-md-3 bg-light mt-3">
+                <form class="d-flex bg-light">
+                    <input class="form-control  searchBtn" id="cityInput" type="search"
                         placeholder="Search for city">
                     <button class="btn btn-primary" id="submitCity" type="submit"><i class="fa fa-search"
                             aria-describedby="searchBtn"></i></button>
                 </form>
+                <div class="row mt-5"></div>
+                <h5>Recent Searches</h5>
+                    <div id="previousSearch" class="btn-group-vertical btn-block">
+
+                    </div>
             </div>
+           
             <div class="col-md-9">
                 <!-- current weather -->
                 <div class="row border border-light-dark rounded p-2 m-3 mt-5">
-                    <h3>Current Conditions:</h3>
+                    <h3>Current Conditions</h3>
                     <div class="container" id="weather">
                     </div>
                 </div>
                 <!-- 5-day forcast -->
-                <div class="row p-2 m-2">
-                    <h3>5-Day Forecast:</h3>
-                    <div class="card-deck" id="forecast">
+                <div class="row p-2 m-1 mb-4">
+                    <h3>5-Day Forecast</h3>
+                    <div class="card-deck" id="forcast">
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Footer -->
-        <nav class="navbar fixed-bottom bg-dark w-100">
-            <div class="row">
-            </div>
-        </nav>
+        <div class="row bg-dark">
+        </div> 
     </div>
 
 
