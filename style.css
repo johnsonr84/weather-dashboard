@@ -2,7 +2,16 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.container-fluid {
-    height: 70vh;
-    width: 100vh;
+div.row.bg-dark {
+height: 50px;
+}
+
+#cityHistoryButton {
+    background-color: #fff;
+    border: 1px solid lightgray;
+}
+
+#cityHistoryButton:hover {
+    color: #fff;
+    background-color: #0168D9;
 }
