@@ -10,6 +10,7 @@ assignment 6
   * [Description](#Description)
   * [User Story](#UserStory)
   * [Project URL](#Project-URL)
+  * [Deplyment](#Deployment)
   * [Mock-up](#Mock-up)
   * [Usage](#Usage)
   * [Credits](#Credits)
@@ -49,6 +50,9 @@ assignment 6
   ## Project URL
   https://github.com/johnsonr84/weather-dashboard
 
+  ## Deployment
+  https://johnsonr84.github.io/weather-dashboard/
+
   ## Mock-Up
   <table>
   <tr>
@@ -58,16 +62,6 @@ assignment 6
     <td><img src="assets/06-server-side-apis-homework-demo.png" height=300 alt="screenshot of weather-dashboard"></td>
   </tr>
   </table>
-  <table>
-  <tr>
-     <td>weather-dashboard</td>
-     <td>weather-dashboard</td>
-  </tr>
-   <tr>
-    <td><img src="./img/weather-dashboard_3.png" height=300 alt="screenshot of weather-dashboard"></td>
-    <td><img src="./img/weather-dashboard_4.png" height=300 alt="screenshot of weather-dashboard"></td>
-  </tr>
- </table>
 
   ## Installation 
   No installations required at this time 
