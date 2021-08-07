@@ -3,7 +3,8 @@ var apiKey = "0ad804791848d3621c16320ba8701218";
 var currentWeatherURL = "https://api.openweathermap.org/data/2.5/weather?q"
 var forcastURL = "https://api.openweathermap.org/data/2.5/forecast?q"
 var currentWeather = $("#weather");
-var forecast = $("#forecast");
+var weatherForcast = $("#forcast");
+var recentSearches;
 
 $(document).ready(function () {
     $("#cityInput").keyup(function (event) {
@@ -38,6 +39,7 @@ function returnWeather(cityName) {
         <p>Humidity: ${response.main.humidity}%</p>
         <p>Wind Speed: ${response.wind.speed} mph</p>
         `, uvIndex(response.coord))
+        createHistoryButton(response.name);
         localStorage.setItem("cityObject", JSON.stringify(response));
         console.log(response);
     })
@@ -75,7 +77,7 @@ function returnForecast(cityName) {
     $.get(queryURL).then(function (response) {
         let forecastInfo = response.list;
         console.log(response);
-        forecast.empty();
+        weatherForcast.empty();
         $.each(forecastInfo, function (i) {
             if (!forecastInfo[i].dt_txt.includes("12:00:00")) {
                 return;
@@ -85,7 +87,7 @@ function returnForecast(cityName) {
             //displays icon
             let weatherIcon = `https://openweathermap.org/img/wn/${forecastInfo[i].weather[0].icon}.png`;
             // append data to div when searched
-            forecast.append(`
+            weatherForcast.append(`
                 <div class="card text-white bg-primary">
                     <div class="card-body">
                         <h6>${forecastDate.getMonth() + 1}/${forecastDate.getDate()}/${forecastDate.getFullYear()}</h6>
@@ -99,3 +101,54 @@ function returnForecast(cityName) {
         })
     })
 };
+
+// Previous cities show under search 
+$("#previousCities").click(function () {
+    let cityName = event.target.value;
+    returnWeather(cityName);
+    returnForecast(cityName);
+
+})
+
+// Local Storage functionality and with Kelly's help, pulled up last searched city on refresh.
+if (localStorage.getItem("localWeatherSearches")) {
+    recentSearches = JSON.parse(localStorage.getItem("localWeatherSearches"));
+    let currentCity = localStorage.getItem("currentCity")
+    writeSearchHistory(recentSearches);
+    returnWeather(currentCity);
+    returnForecast(currentCity);
+
+} else {
+    recentSearches = [];
+
+};
+// Creates history of recent searches 
+function createHistoryButton(cityName) {
+    var citySearch = cityName.trim();
+    var buttonCheck = $(`#previousSearch > BUTTON[value='${citySearch}']`);
+    if (buttonCheck.length == 1) {
+        return;
+    }
+
+    if (!recentSearches.includes(cityName)) {
+        recentSearches.push(cityName);
+        localStorage.setItem("localWeatherSearches", JSON.stringify(recentSearches));
+    }
+
+    $("#previousSearch").prepend(`
+    <button class="btn btn-light cityHistoryBtn" id="cityHistoryButton" value='${cityName}'>${cityName}</button>
+        `);
+}
+
+$(".cityHistoryBtn").on("click", function () {
+    currentWeather.empty();
+    let cityName = $(this).val();
+    returnWeather(cityName);
+    returnForecast(cityName);
+});
+
+function writeSearchHistory(array) {
+    $.each(array, function (i) {
+        createHistoryButton(array[i]);
+    })
+}
